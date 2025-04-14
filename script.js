@@ -67,24 +67,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listener to the generate button
     generateBtn.addEventListener('click', displayPost);
 
-    // Add event listener for the copy button
+    // Updated the copy button functionality to ensure it works reliably
     copyBtn.addEventListener('click', () => {
-        const textToCopy = outputPost.value;
+        const textToCopy = outputPost.value.trim(); // Ensure no empty or whitespace-only text
         if (textToCopy) {
             navigator.clipboard.writeText(textToCopy).then(() => {
-                // Optional: Provide feedback to the user
-                const originalText = copyBtn.textContent;
+                // Provide feedback to the user
                 copyBtn.textContent = 'Copied!';
                 setTimeout(() => {
-                    copyBtn.textContent = originalText;
+                    copyBtn.textContent = 'Copy Post';
                 }, 2000); // Reset text after 2 seconds
             }).catch(err => {
                 console.error('Failed to copy text: ', err);
-                // Optional: Inform user about the error
                 alert('Failed to copy text. Please try again or copy manually.');
             });
         } else {
-            // Optional: Inform user there's nothing to copy
             alert('Nothing to copy yet. Generate a post first!');
         }
     });
