@@ -1,0 +1,139 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap'); /* Sans-serif for body/buttons */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap'); /* Serif for heading */
+
+:root {
+    /* Colors inspired by the screenshot */
+    --claude-bg-main: #F9F9F7; /* Light beige/off-white background */
+    --claude-bg-container: #FFFFFF; /* White for the container/textarea */
+    --claude-text-primary: #1F2937; /* Dark grey/black text */
+    --claude-text-secondary: #6B7280; /* Medium grey text */
+    --claude-border: #E5E7EB; /* Light grey border */
+    --claude-accent: #E65C4F; /* Orangey-red accent */
+    --claude-accent-hover: #D94B3D; /* Darker accent on hover */
+    --claude-button-secondary-bg: #F3F4F6; /* Light grey for secondary button */
+    --claude-button-secondary-hover: #E5E7EB;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--claude-bg-main);
+    color: var(--claude-text-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: transparent; /* Make container transparent, body has bg */
+    padding: 0; /* Remove container padding */
+    border-radius: 0;
+    box-shadow: none; /* Remove container shadow */
+    border: none; /* Remove container border */
+    max-width: 750px; /* Max width similar to chat area */
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    margin: auto;
+}
+
+h1 {
+    font-family: 'Source Serif Pro', serif; /* Apply serif font */
+    color: var(--claude-text-primary);
+    font-size: 2.5rem; /* Larger heading size */
+    font-weight: 400; /* Regular weight */
+    margin-bottom: 40px; /* More space below heading */
+    text-align: center;
+}
+
+/* Style the button container */
+.button-group {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+button {
+    font-family: 'Inter', sans-serif;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent; /* Base border */
+    border-radius: 8px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    /* Remove default margin-bottom from individual buttons */
+    margin-bottom: 0;
+}
+
+#generateBtn {
+    background-color: var(--claude-accent);
+    color: white;
+    border-color: var(--claude-accent);
+}
+
+#generateBtn:hover {
+    background-color: var(--claude-accent-hover);
+    border-color: var(--claude-accent-hover);
+}
+
+#generateBtn:disabled {
+    background-color: var(--claude-button-secondary-bg);
+    color: var(--claude-text-secondary);
+    border-color: var(--claude-border);
+    cursor: not-allowed;
+}
+
+#copyBtn {
+    background-color: var(--claude-button-secondary-bg);
+    color: var(--claude-text-primary);
+    border-color: var(--claude-border);
+    /* Remove margin-top/left from previous style */
+    margin-top: 0;
+    margin-left: 0;
+}
+
+#copyBtn:hover {
+    background-color: var(--claude-button-secondary-hover);
+}
+
+textarea {
+    width: 100%; /* Take full width of container */
+    box-sizing: border-box; /* Include padding/border in width */
+    padding: 15px 20px;
+    font-size: 15px; /* Slightly larger text */
+    border: 1px solid var(--claude-border);
+    border-radius: 12px; /* More rounded corners like input */
+    resize: vertical;
+    background-color: var(--claude-bg-container);
+    color: var(--claude-text-primary);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    min-height: 250px; /* Taller text area */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    margin-top: 10px; /* Space above textarea */
+}
+
+textarea::placeholder {
+    color: var(--claude-text-secondary);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--claude-text-secondary);
+    padding: 20px 0;
+    background-color: var(--claude-bg-container);
+    width: 100%;
+    border-top: 1px solid var(--claude-border);
+}
