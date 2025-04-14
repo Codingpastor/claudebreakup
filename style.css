@@ -139,4 +139,9 @@ footer {
     border-top: 1px solid var(--claude-border);
 }
 
+.footer-note p {
+    font-size: 12px; /* Smaller font size for the footer note */
+    color: var(--claude-text-secondary); /* Match secondary text color */
+}
+
 /* Removed the breakup meter styling */
