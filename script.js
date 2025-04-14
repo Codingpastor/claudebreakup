@@ -46,10 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${intro}\n\n${problem}\n\n${decision}\n\n${conclusion}`;
     }
 
-    // Function to display the generated post
+    // Updated the displayPost function to remove emoji addition
     function displayPost() {
         if (breakupData) {
-            outputPost.value = generatePost();
+            const post = generatePost();
+            outputPost.value = post; // Directly display the post without emojis
         } else {
             outputPost.value = "Still loading data or an error occurred. Please try again shortly.";
         }

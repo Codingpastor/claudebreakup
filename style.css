@@ -21,7 +21,7 @@ body {
     color: var(--claude-text-primary);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Adjust to prevent footer overlap */
     align-items: center;
     min-height: 100vh;
     margin: 0;
@@ -118,6 +118,9 @@ textarea {
     min-height: 250px; /* Taller text area */
     box-shadow: 0 1px 2px rgba(0,0,0,0.03);
     margin-top: 10px; /* Space above textarea */
+    outline: none; /* Remove the black outline */
+    box-shadow: 0 0 0 2px var(--claude-border); /* Add a subtle border instead */
+    overflow-y: auto; /* Ensure the bottom of the box is visible */
 }
 
 textarea::placeholder {
@@ -125,10 +128,8 @@ textarea::placeholder {
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative; /* Change from absolute to relative */
+    margin-top: 20px; /* Add spacing between the footer and the content */
     text-align: center;
     font-size: 14px;
     color: var(--claude-text-secondary);
@@ -137,3 +138,5 @@ footer {
     width: 100%;
     border-top: 1px solid var(--claude-border);
 }
+
+/* Removed the breakup meter styling */
